@@ -1,5 +1,5 @@
 ﻿Module Module1
-    Sub ZeilenErzeugung(ByRef Zeile() As Char)
+    Sub Erzeuge_Zeile(ByRef Zeile() As Char)
 
         'Deklarieren der Variablen
         Dim A As Integer    'Anzahl der Hindernisblocks
@@ -16,24 +16,24 @@
 
         'Anzahl A der HIndernisblocks zufällig ermitteln
         X = VBMath.Rnd
-        Console.WriteLine(X)
+        'Console.WriteLine(X)
         A = (5 - 1) * X + 1
-        Console.WriteLine(A)
+        'Console.WriteLine(A)
 
         'Für jeden der A Hindernisblocks:
         For i = 1 To A
 
             'Größe G des Hindernisblocks zufällig ermitteln
             X = VBMath.Rnd
-            Console.WriteLine(X)
+            'Console.WriteLine(X)
             G = (9 - 1) * X + 1
-            Console.WriteLine("G: " & G)
+            'Console.WriteLine("G: " & G)
 
             'Startposition P des Hindernisblocks zufällig ermitteln
             X = VBMath.Rnd
-            Console.WriteLine(X)
+            'Console.WriteLine(X)
             P = (79 - 0) * X + 0
-            Console.WriteLine("P: " & P)
+            'Console.WriteLine("P: " & P)
 
             'Für jedes der G Einzelhindernisse:
             For j = 1 To G
@@ -72,7 +72,7 @@
         'Hauptschleife des Spiels
         Do
             'neue Zeile erzeugen
-            ZeilenErzeugung(Zeile)
+            Erzeuge_Zeile(Zeile)
 
             'Alle Zeilen des Spielfelds um eine Zeile nach unten verschieben
             'Rückwärtschleife über zeilen
@@ -99,7 +99,7 @@
             Next
 
             'Warten
-            Threading.Thread.Sleep(1000)
+            Threading.Thread.Sleep(500)
         Loop Until leben = 0
 
 
@@ -108,6 +108,7 @@
 
 
     Sub Main()
+
         Spielablauf()
 
     End Sub
